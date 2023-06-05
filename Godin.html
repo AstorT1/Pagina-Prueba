@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Página de Wallpapers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #333;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .wallpapers {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    a img {
+      width: 100%;
+      height: auto;
+    }
+
+    .selected {
+      border: 2px solid red;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Wallpapers GOD </h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Wallpapers Disponibles</h2>
+      <div class="wallpapers">
+        <a href="aaa.jpg" download>
+          <img src="aaa.jpg" alt="Wallpaper 1">
+        </a>
+        <a href="epa.jpg" download>
+          <img src="epa.jpg" alt="Wallpaper 2">
+        </a>
+        <!-- Agrega más wallpapers aquí -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Derechos de autor &copy; 2023 - Mi Página de Wallpapers</p>
+  </footer>
+
+  <script>
+    // Obtener todos los elementos de imagen
+    var wallpapers = document.querySelectorAll('.wallpapers a');
+
+    // Agregar evento de clic a cada imagen para resaltarla
+    wallpapers.forEach(function(wallpaper) {
+      wallpaper.addEventListener('click', function() {
+        // Eliminar la clase 'selected' de todas las imágenes
+        wallpapers.forEach(function(wallpaper) {
+          wallpaper.classList.remove('selected');
+        });
+
+        // Agregar la clase 'selected' a la imagen seleccionada
+        this.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>
